@@ -1,4 +1,5 @@
 import { Toast } from '@/components/Toast';
+import { ToastsContainer } from '@/components/ToastsContainer';
 import { createContext, useCallback, useState } from 'react';
 import { IToast, ToastContextValue, ToastProviderProps } from './types';
 
@@ -23,13 +24,15 @@ function ToastProvider({ children }: ToastProviderProps) {
 	return (
 		<ToastContext.Provider value={{ open, close }}>
 			{children}
-			{toasts.map(toast => (
-				<Toast
-					key={toast.id}
-					message={toast.message}
-					close={() => close(toast.id)}
-				/>
-			))}
+			<ToastsContainer>
+				{toasts.map(toast => (
+					<Toast
+						key={toast.id}
+						message={toast.message}
+						close={() => close(toast.id)}
+					/>
+				))}
+			</ToastsContainer>
 		</ToastContext.Provider>
 	);
 }
