@@ -1,3 +1,1 @@
-export interface UseTimeoutProps {
-	callback: () => void;
-}
+export type UseTimeoutCallback = () => void;

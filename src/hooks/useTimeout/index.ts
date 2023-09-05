@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
-import { UseTimeoutProps } from './types';
+import { UseTimeoutCallback } from './types';
 
-export function useTimeout({ callback }: UseTimeoutProps) {
+export function useTimeout(callback: UseTimeoutCallback) {
 	const savedCallback = useRef(callback);
 
 	useEffect(() => {
