@@ -8,6 +8,7 @@ export function Toast({ message, close }: ToastProps) {
 			<p>{message}</p>
 			<button
 				type="button"
+				title="close"
 				className={styles['close-button']}
 				onClick={close}
 			>

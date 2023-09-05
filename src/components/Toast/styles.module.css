@@ -1,3 +1,34 @@
-.toast {}
+.toast {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 16px;
+	width: 200px;
+	border-radius: 8px;
+	background-color: #f1c617;
+	color: #000;
+	animation-name: slide-in;
+	animation-duration: 200ms;
+}
 
-.close-button {}
+.close-button {
+	background-color: transparent;
+}
+
+@keyframes slide-in {
+	0% {
+		transform: translateX(100%);
+	}
+
+	60% {
+		transform: translateX(-15%);
+	}
+
+	80% {
+		transform: translateX(5%);
+	}
+
+	80% {
+		transform: translateX(0);
+	}
+}
